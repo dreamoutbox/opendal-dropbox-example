@@ -1,0 +1,21 @@
+[package]
+name = "opendal-dropbox-example"
+version = "0.1.0"
+edition = "2024"
+
+[workspace]
+
+[dependencies]
+opendal = { version = "=0.59.3", default-features = false, features = [
+    "services-dropbox",
+    "http-transport-reqwest",
+    "executors-tokio",
+    "layers-logging",
+] }
+tokio = { version = "=1.53.1", features = ["full"] }
+anyhow = "=1.0.104"
+clap = { version = "=4.6.7", features = ["derive", "env"] }
+tracing = "=0.1.44"
+tracing-subscriber = { version = "=0.3.23", features = ["env-filter"] }
+chrono = "=0.4.45"
+dotenvy = "=0.15.7"
